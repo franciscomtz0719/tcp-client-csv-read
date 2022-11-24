@@ -3,7 +3,6 @@ const client1 = new net.Socket();
 
 const fs = require("fs");
 const { parse } = require("csv-parse");
-let data = [];
 let csvData = [];
 let interval = 30000;
 
@@ -22,7 +21,6 @@ fs.createReadStream("./HistoricalExample.csv")
           stringEl = el.join("|");
           //Log when the connection is established
           console.log(`Client 1 :Connected to server on port ${port}`);
-
           //Try to send data to the server
           client1.write(stringEl);
           console.log(`index: ${index}, Data sent: ${stringEl}`);
